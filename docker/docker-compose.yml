@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    networks:
+      - labnet
+
+  bwapp:
+    image: raesene/bwapp
+    container_name: bwapp
+    networks:
+      - labnet
+
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: juice-shop
+    networks:
+      - labnet
+
+  api-lab:
+    build: ./api-lab
+    container_name: api-lab
+    networks:
+      - labnet
+
+  auth-lab:
+    build: ./auth-lab
+    container_name: auth-lab
+    networks:
+      - labnet
+
+  admin-lab:
+    build: ./admin-lab
+    container_name: admin-lab
+    networks:
+      - labnet
+
+  files-lab:
+    build: ./files-lab
+    container_name: files-lab
+    networks:
+      - labnet
+
+  nginx:
+    image: nginx:alpine
+    container_name: reverse_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs/nginx:/var/log/nginx
+    networks:
+      - labnet
+    depends_on:
+      - dvwa
+      - bwapp
+      - juice-shop
+      - api-lab
+      - auth-lab
+      - admin-lab
+      - files-lab
+
+networks:
+  labnet:
+    driver: bridge

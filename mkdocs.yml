@@ -1,0 +1,60 @@
+site_name: PMT HackLab
+site_description: Laboratorio de práctica para ethical hacking y bug bounty
+site_url: https://permotion.github.io/PMT_HackLab
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+dev_addr: 0.0.0.0:8003
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Instalación:
+    - setup/index.md
+    - setup/docker.md
+    - setup/configuracion-host.md
+  - Laboratorios:
+    - labs/index.md
+    - labs/dvwa.md
+    - labs/bwapp.md
+    - labs/juice-shop.md
+    - labs/api-lab.md
+    - labs/auth-lab.md
+    - labs/admin-lab.md
+    - labs/files-lab.md

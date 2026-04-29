@@ -1,0 +1,10 @@
+127.0.0.1	localhost
+
+127.0.0.1 dvwa.local
+127.0.0.1 bwapp.local
+127.0.0.1 juice.local
+127.0.0.1 api.lab.local   # API propia vulnerable
+127.0.0.1 auth.lab.local  # login + JWT
+127.0.0.1 admin.lab.local # panel admin
+127.0.0.1 dev.lab.local   # entorno dev expuesto
+127.0.0.1 files.lab.local # archivos/uploads
