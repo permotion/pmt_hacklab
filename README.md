@@ -41,7 +41,7 @@ Acceder a http://localhost:8003 para la documentación.
 
 ## Documentación
 
-https://permotion.github.io/PMT_HackLab/
+https://permotion.github.io/pmt_hacklab/
 
 ## Credentiales
 
